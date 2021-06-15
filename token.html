@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Friction.Finance</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Mintless, Self-Sustaining Yield Generation" />
+        <meta name="keywords" content="BSC, Yield Farm" />
+        <meta property="og:image" content="xTAO.png"/>
+
+        <meta property="og:title" content="Friction.Finance - Mintless Yield Aggregator"/>
+        
+        <meta property="og:description" content="Friction Finance - The first mintless AMM yield aggregator. Powered by Binance Smart Chan (BSC)"/>
+        
+            <meta
+              name="description"
+              content="Welcome to xTAO! The first mintless AMM yield aggregator powered by BSC."
+            />
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1" />
+            <meta name="theme-color" content="#000000" />
+            <meta name="twitter:image" content="xTAO.png" />
+            <meta
+              name="twitter:description"
+              content="Trade on Friction Finance's AMM, earn yield on pools and farms without xTao ever minting a new token."
+            />
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:title" content="Friction Finance - The first mintless AMM yield aggregator. Powered by Binance Smart Chan (BSC)" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="favicon.ico">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- Main Css -->
+        <script src="jquery.combinedScroll.js"></script>
+        <link href="css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt" />
+        <link href="css/colors/default.min.css" rel="stylesheet" id="color-opt">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <style>
+            html, body {
+                height: 100%;
+            }
+.bg{
+    height: 100%;
+}
+.bg2 {
+    height: 100%;
+background-color: #0b101b;
+background-image: url('stars.svg');
+
+/* background-image: linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07); */
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: yellow #0b101b;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0b101b;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: yellow;
+  border-radius: 20px;
+  border: 3px solid #0b101b;
+}
+
+html, body {
+                height: 100%;
+            }
+.bg{
+    height: 100%;
+}
+.lottie {
+    height: 900px; margin-top: -250px;
+}
+.bg2 {
+    height: 100%;
+background-color: #0b101b;
+background-image: url('stars2.svg');
+
+/* background-image: linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07); */
+}
+
+.iframe-placeholder
+{
+   background: url('./spin.gif') no-repeat;
+   background-size: 50px;
+   background-position: center;
+
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: yellow #0b101b;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0b101b;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: yellow;
+  border-radius: 20px;
+  border: 3px solid #0b101b;
+}
+.left {
+    padding-left: 75px;
+}
+@media screen and (max-width: 768px) {
+
+.content-desktop {display: none;}
+.content-mobile {display: block;}
+.row>* {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.lottie {
+    height: auto !important; margin-top: -250px;
+}
+
+.left {
+    padding-left: 20px;
+}
+.bg-home, .bg-half-170, .bg-half-260, .bg-marketing, .swiper-slider-hero .swiper-container .swiper-slide {
+    padding: 60px 0 !important;
+}
+
+}
+
+#topnav, #navigation {
+    background-color: #0b101b !important;
+}
+
+        </style>
+    </head>
+
+    <body>
+        <!-- Loader -->
+        <!-- <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Loader -->
+        
+        <!-- Navbar STart -->
+        <header id="topnav" class="defaultscroll sticky">
+            <div class="container">
+                <!-- Logo container-->
+                <a class="logo" href="index.html">
+                    <img src="images/logo.png" height="24" class="logo-light-mode" alt="">
+                    <img src="images/logo.png"" height="24" class="logo-dark-mode" alt="">
+                </a>
+                <div class="buy-button content-desktop">
+                    <a href="#swap" class="btn header-btn">Trade xTAO</a>
+                </div><!--end login button-->
+                <!-- End Logo container-->
+                <div class="menu-extras">
+                    <div class="menu-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </div>
+                </div>
+        
+                <div id="navigation">
+                    <!-- Navigation Menu-->   
+                    <ul class="navigation-menu">
+                        <li><a href="index.html" class="sub-menu-item">Home</a></li>
+                        <li><a href="index.html" class="sub-menu-item">Yield</a></li>
+                        <li><a href="index.html" class="sub-menu-item">dApps</a></li>
+                        <li><a href="index.html" class="sub-menu-item">Liquidity</a></li>
+                        <li><a href="index.html" class="sub-menu-item">FAQ</a></li>
+                        <li><a href="token.html" class="sub-menu-item active">Fair Launch</a></li>
+
+        
+                    </ul><!--end navigation menu-->
+                </div><!--end navigation-->
+            </div><!--end container-->
+        </header><!--end header-->
+        <!-- Navbar End -->
+        
+        <!-- Hero Start -->
+        <div class="bg">
+        <section class="bg-half-170 d-table w-100">
+            <div class="bg2" style="padding-top: 80px; margin-top: -80px;">
+            <!-- <div class="container"> -->
+             
+                <div class="row mt-5 align-items-center left">
+                    <div class="col-lg-7 col-md-7" style="margin-bottom: 200px;">
+                        <div class="title-heading me-lg-4">
+                            <h1 class="heading mb-3">Friction.Finance <br/><span class="text-primary">Provable Transparency</span> </h1>
+                            <p class="para-desc text-muted">xTAO had a provably fair launch and the initial token distribution can be found below.</p>
+                            <div class="mt-4">
+
+                                <a href="#launch" class="btn btn-outline-primary mt-2"><i data-feather="arrow-right"></i> Fair Launch</a>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-5 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0" style="padding-right: 16px;">
+                        <lottie-player src="https://migration.friction.finance/lot2.json" background="transparent" class="lottie" loop autoplay></lottie-player>
+                    </div><!--end col-->
+                </div><!--end row-->
+            <!-- </div> -->
+           <!--end container-->
+            </div>
+        </section><!--end section-->
+
+        
+  
+        <!-- Hero End -->
+
+        <!-- Partners start -->
+        <section class="py-4 border-custom-all content-desktop" style="position: absolute;
+        bottom: 0;
+        width: 100%;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-2 col-6 text-center py-4">
+                       No Private Investors & No ICO
+                    </div><!--end col-->
+
+                    <div class="col-lg-4 col-md-2 col-6 text-center py-4">
+No 
+                        Tokens allocated for "team wallet"
+                    </div><!--end col-->
+                    
+                    <div class="col-lg-4 col-md-2 col-6 text-center py-4">
+                       2000+ 
+                        
+                       Holders
+                    </div><!--end col-->
+
+
+                </div><!--end row-->
+            </div><!--end container-->
+        </section><!--end section-->
+    </div>
+        <!-- Partners End -->
+
+        <section class="section bg-normal border-custom-all" id="launch">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <div class="section-title">
+                            <h4 class="title mb-4">xTAO Launch</h4>
+                            <p class="text-muted para-desc mb-0 mx-auto">No pre-sale, no private investors, initial distribution via AMM.</p>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+
+                <div class="row align-items-center">
+                    <div class="col-lg-5 col-md-6 content-desktop">
+                        <div id="chart">
+        
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-7 col-md-6 mt-4 pt-2">
+                        <div class="section-title ms-lg-5">
+                            <h4 class="title mb-4">xTAO's approach towards <br><span class="text-primary">transparency.</span></h4>
+                            <p class="text-muted">A lot of tokens that have fair launches put all the circulating supply in the AMM at launch. This is problematic as it allows devs and early whales to buy a large percent of the supply right at launch.</p>
+                           
+                            <p class="text-muted">TAO only provided 2% of the total token supply to the AMM at launch, the rest were either burned or locked in a staking contract that slowly emits TAO over time without ever minting a new token. Here are some benefits:</p>
+                            <ul class="list-unstyled text-muted">
+                                <li class="mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>- No whales / early buyers bought more then 1% of the total supply at launch</li>
+                                <li class="mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>- The staking contract slowly releases TAO into circulation over time</li>
+                                <li class="mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>- Anyone is able to stake their LP tokens and earn xTAO from staking.</li>
+                            </ul>
+                            
+                            <a href="https://frictionfinance.gitbook.io/friction-finance/holder-safety/tx-proof" class="mt-3 h6 text-primary">View Timelocks & TX Proof <i class="uil uil-angle-right-b align-middle"></i></a>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+
+            <div class="container mt-60">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-md-6 order-2 order-md-1">
+                        <div class="section-title">
+                            <h4 class="title mb-4">What are the tokens provided in the<br> <span class="text-primary">TAO migration?</span></h4>
+                            <p class="text-muted">xTAO is the evolution of TAO. All holders were able to migrate their <br/>
+                                TAO tokens for xTAO at a 1:1 swap rate. 16% of xTAO's total supply was <br/>provided for this migration.</p>
+                            <a href="https://frictionfinance.gitbook.io/friction-finance/" class="mt-3 h6 text-primary">Find Out More <i class="uil uil-angle-right-b align-middle"></i></a>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-5 col-md-6 order-1 order-md-2">
+                                <img src="images/illustrator/migration.svg" alt="" width="100%">
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+
+        </section><!--end section-->
+        <footer class="footer footer-bar">
+            <div class="container text-center">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="text-sm-start">
+                            <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Friction.Finance</p>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </footer><!--end footer-->
+        <!-- Footer End -->
+
+        <!-- Back to top -->
+        <a href="#" onclick="topFunction()" id="back-to-top" class="btn btn-icon btn-primary back-to-top"><i data-feather="arrow-up" class="icons"></i></a>
+        <!-- Back to top -->
+
+        <!-- javascript -->
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+
+  
+var options = {
+         
+    series: [16, 17, 60, 7],
+          chart: {
+          width: '100%',
+          type: 'pie',
+        },
+        colors:['#e8ce07', '#1f2b46', '#3f51b5', '#607d8b'],
+        labels: ['TAO Migration', 'Burn Wallet', 'Staking Contract (Locked)', 'Ecosystem Funds (Hard-Lock)'],
+        
+title: {
+    text: 'xTAO Distribution At Launch',
+    align: 'left',
+    margin: 55,
+    align: 'center',
+    offsetX: 0,
+    offsetY: 0,
+    floating: false,
+    style: {
+      fontSize:  '14px',
+      fontWeight:  'bold',
+      fontFamily:  undefined,
+      color:  '#fff'
+    },
+},
+            legend: {
+    show: true,
+    showForSingleSeries: false,
+    showForNullSeries: true,
+    showForZeroSeries: true,
+    position: 'bottom',
+    horizontalAlign: 'center', 
+    floating: false,
+    fontSize: '13px',
+    fontFamily: 'Helvetica, Arial',
+    fontWeight: 400,
+    formatter: undefined,
+    inverseOrder: false,
+    width: undefined,
+    height: undefined,
+    tooltipHoverFormatter: undefined,
+    offsetX: 0,
+    offsetY: 10,
+    labels: {
+        colors: 'white',
+        useSeriesColors: false
+    },
+    markers: {
+        width: 12,
+        height: 12,
+        strokeWidth: 0,
+        strokeColor: '#fff',
+        fillColors: undefined,
+        radius: 12,
+        customHTML: undefined,
+        onClick: undefined,
+        offsetX: 0,
+        offsetY: 0
+    },
+    itemMargin: {
+        horizontal: 15,
+        vertical: 10
+    },
+    onItemClick: {
+        toggleDataSeries: true
+    },
+    onItemHover: {
+        highlightDataSeries: true
+    },
+},
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200
+            },
+
+          }
+        }]
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+      
+      
+    
+      
+    
+      
+      
+    
+          </script>
+        <!-- Icons -->
+        <script src="js/feather.min.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>

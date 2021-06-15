@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Friction.Finance</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Mintless, Self-Sustaining Yield Generation" />
+        <meta name="keywords" content="BSC, Yield Farm" />
+        <meta property="og:image" content="xTAO.png"/>
+
+        <meta property="og:title" content="Friction.Finance - Mintless Yield Aggregator"/>
+        
+        <meta property="og:description" content="Friction Finance - The first mintless AMM yield aggregator. Powered by Binance Smart Chan (BSC)"/>
+        
+            <meta
+              name="description"
+              content="Welcome to xTAO! The first mintless AMM yield aggregator powered by BSC."
+            />
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1" />
+            <meta name="theme-color" content="#000000" />
+            <meta name="twitter:image" content="xTAO.png" />
+            <meta
+              name="twitter:description"
+              content="Trade on Friction Finance's AMM, earn yield on pools and farms without xTao ever minting a new token."
+            />
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:title" content="Friction Finance - The first mintless AMM yield aggregator. Powered by Binance Smart Chan (BSC)" />
+
+        <link rel="shortcut icon" href="favicon.ico">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+        <script src="jquery.combinedScroll.js"></script>
+        <link href="css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt" />
+        <link href="css/colors/default.min.css" rel="stylesheet" id="color-opt">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <style>
+            html, body {
+                height: 100%;
+            }
+.bg{
+    height: 100%;
+}
+.lottie {
+    height: 900px; margin-top: -250px;
+}
+.bg2 {
+    height: 100%;
+background-color: #0b101b;
+background-image: url('stars2.svg');
+
+/* background-image: linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07), linear-gradient(#e8ce07, #e8ce07); */
+}
+
+.iframe-placeholder
+{
+   background: url('./spin.gif') no-repeat;
+   background-size: 50px;
+   background-position: center;
+
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: yellow #0b101b;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0b101b;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: yellow;
+  border-radius: 20px;
+  border: 3px solid #0b101b;
+}
+.left {
+    padding-left: 75px;
+}
+.disabled {
+    pointer-events: none;
+  cursor: default;
+}
+
+.pad {
+    padding-top: 100px
+}
+@media screen and (max-width: 768px) {
+
+.content-desktop {display: none;}
+.content-mobile {display: block;}
+.row>* {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.pad {
+padding-top: 100px !important;
+}
+
+
+.lottie {
+    height: auto !important; margin-top: -250px;
+}
+
+.left {
+    padding-left: 20px;
+}
+.bg-home, .bg-half-170, .bg-half-260, .bg-marketing, .swiper-slider-hero .swiper-container .swiper-slide {
+    padding: 60px 0 !important;
+}
+
+}
+
+@media screen and (max-height: 768px) {
+
+
+.pad {
+padding-top: 0px;
+}
+
+
+
+}
+
+#topnav, #navigation {
+    background-color: #0b101b !important;
+}
+
+        </style>
+    </head>
+
+    <body>
+
+        <header id="topnav" class="defaultscroll sticky">
+            <div class="container">
+            
+                <a class="logo" href="index.html">
+                    <img src="images/logo.png" height="24" class="logo-light-mode" alt="">
+                    <img src="images/logo.png"" height="24" class="logo-dark-mode" alt="">
+                </a>
+                <div class="buy-button content-desktop">
+                    <a href="#swap" class="btn header-btn">Trade xTAO</a>
+                </div>
+     
+                <div class="menu-extras">
+                    <div class="menu-item">
+                     
+                        <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+         
+                    </div>
+                </div>
+        
+                <div id="navigation">
+
+                    <ul class="navigation-menu">
+                        <li><a href="index.html" class="sub-menu-item active">Home</a></li>
+                        <li><a href="#yield" class="sub-menu-item">Yield</a></li>
+                        <li><a href="#dapps" class="sub-menu-item">dApps</a></li>
+                        <!-- <li><a href="#liquidity" class="sub-menu-item">Liquidity</a></li> -->
+                        <li><a href="#faq" class="sub-menu-item">FAQ</a></li>
+                        <li><a href="token.html" class="sub-menu-item">Fair Launch</a></li>
+                        <li><a href="https://dashboard.friction.finance/farms" target="_BLANK" class="sub-menu-item">Farms</a></li>
+
+
+        
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div class="bg">
+        <section class="bg-half-170 d-table w-100">
+            <div class="bg2 pad" style="margin-top: -80px;">
+
+                <div class="row mt-5 align-items-center left">
+                    <div class="col-lg-7 col-md-7" style="margin-bottom: 200px;">
+                        <div class="title-heading me-lg-4">
+                            <h1 class="heading mb-3">Friction.Finance <br/><span class="text-primary">Mintless, Self-Sustaining Yield Generation</span> </h1>
+                            <p class="para-desc text-muted">xTAO applies a 3% fee to each transaction and instantly splits that fee among all holders, with a <b>unique twist</b>.</p>
+                            
+                            <div class="mt-4 content-desktop">
+                                <a href="https://dashboard.friction.finance" class="btn btn-outline-primary mt-2"><i data-feather="arrow-right"></i> Enter App</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0" style="padding-right: 16px;">
+                        <lottie-player src="https://migration.friction.finance/lot2.json" background="transparent" class="lottie" loop autoplay></lottie-player>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-4 border-custom-all content-desktop" style="position: absolute;
+        bottom: 0;
+        width: 100%;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-2 col-md-2 col-6 text-center py-4">
+                       $<div id="price" style="display: inline; font-family: monospace;">-</div>
+                       <br/>
+                       Price
+                    </div>
+
+                    <div class="col-lg-2 col-md-2 col-6 text-center py-4">
+                        $<div id="mCap" style="display: inline; font-family: monospace;">-</div>
+                        <br/>
+                        Market Cap
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-2 col-6 text-center py-4">
+                        <div id="fees" style="display: inline; font-family: monospace;">-</div>
+                        <br/>
+                        Fees Distributed
+                    </div>
+
+                                        <div class="col-lg-2 col-md-2 col-6 text-center py-4">
+                      <div id="circulating" style="display: inline; font-family: monospace;">-</div>
+                        <br/>
+                        Circ. Supply
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-2 col-6 text-center py-4">
+                        <span style="font-family: monospace;">25,000,000 </span>
+                        <br/>
+                        Max  Total Supply
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+        <section class="section bg-custom border-custom-all" id="swap">
+            <div class="container">
+             
+               <iframe class="iframe-placeholder" id="iframe-swap" src="https://exchange.friction.finance/"></iframe>
+            
+            </div>
+        </section>
+
+        <section class="section bg-normal border-custom-all" id="yield">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <div class="section-title">
+                            <h4 class="title mb-4">xTAO Yield Generation</h4>
+                            <p class="text-muted para-desc mb-0 mx-auto">Powering the next generation of Reflective tokens, with a twist.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-lg-5 col-md-6">
+                        <img src="images/illustrator/earn.svg" alt="" width="100%">
+                    </div>
+
+                    <div class="col-lg-7 col-md-6 mt-4 pt-2">
+                        <div class="section-title ms-lg-5">
+                            <h4 class="title mb-4">Redefining passive earning with <br><span class="text-primary">self-sustainability.</span></h4>
+                            <p class="text-muted">xTAO combines RFI static rewards with self-sustaining yield farms which allow holders to earn rewards via reflections after every transaction. These transaction fees also allow xTAO to have self-sustaining LP yield farms that never run out of rewards without ever minting a new token.</p>
+                            <ul class="list-unstyled text-muted">
+                                <li class="mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>3% TX fee charged on every xTAO transaction</li>
+                                <li class="mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>2% automatically and instantly distributed to holders</li>
+                                <li class="mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>1% locked in xTAO staking contract for LP farmers</li>
+                            </ul>
+                            
+                            <a href="https://frictionfinance.gitbook.io/friction-finance/" target="_BLANK" class="mt-3 h6 text-primary">Whitepaper <i class="uil uil-angle-right-b align-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-60">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-md-6 order-2 order-md-1">
+                        <div class="section-title">
+                            <h4 class="title mb-4">Increasing holder distributions with<br> custom <span class="text-primary">dApps.</span></h4>
+                            <p class="text-muted">xTAO was built with dApp integrations in mind. A 3% static transaction <br/>fee is enough to self-sustain the LP farms and reward holders while also not<br/> being too high to prevent dApp integrations. Here are some dApp ideas:</p>
+                            <ul class="list-unstyled text-muted">
+                                <li class="mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>-NFT marketplace where fees are distributed to xTAO holders via reflections</li>
+                                <li class="mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>-AMM where pairs route through xTAO which triggers a xTAO static reflection</li>
+                                <li class="mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>-Lottery where fees for tickets automatically apply a xTAO static reflection</li>
+                            </ul>
+                            <p class="text-muted">In these above cases, the fees from the dApps would essentially be the xTAO <br/> transaction fee which is automatically distributed to xTAO holders.</p>
+
+                            <a href="https://frictionfinance.gitbook.io/friction-finance/" target="_BLANK" class="mt-3 h6 text-primary">Find Out More <i class="uil uil-angle-right-b align-middle"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-md-6 order-1 order-md-2">
+                                <img src="images/illustrator/dapps.svg" alt="" width="100%">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="section pb-0 bg-custom" id="dapps">
+            <div class="container mt-60">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="section-title text-center">
+                            <h6 class="text-primary">dApps Powered by xTAO</h6>
+                            <h4 class="title mb-4">Community Driven & Maintained</h4>
+                            <p class="para-desc mx-auto text-muted mb-0">xTAO dApps have automated fee reflections built in. As more users interact with the dApps, xTAO holders earn more from transaction distributions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 col-mg-10 mt-4 pt-2">
+                        <div class="bg-normal bg-white-dark p-4 rounded shadow">
+                            <br/>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <ul class="nav nav-pills nav-justified flex-column flex-sm-row rounded bg-soft-light" id="pills-tab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link nav-link-alt rounded" id="analytics-tab" data-bs-toggle="pill" href="#analytics" role="tab" aria-controls="analytics" aria-selected="false">
+                                                <div class="text-center">
+                                                    <h6 class="title fw-normal mb-0">Custom Analytics</h6>
+                                                </div>
+                                            </a>
+                                        </li>
+                                      
+                                        <li class="nav-item">
+                                            <a class="nav-link nav-link-alt rounded" id="pills-npm-tab" data-bs-toggle="pill" href="#pills-npm" role="tab" aria-controls="pills-npm" aria-selected="false">
+                                                <div class="text-center">
+                                                    <h6 class="title fw-normal mb-0">Farming App</h6>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        
+       
+                                        
+                                        <li class="nav-item">
+                                            <a class="nav-link nav-link-alt rounded" id="pills-spm-tab" data-bs-toggle="pill" href="#pills-spm" role="tab" aria-controls="pills-spm" aria-selected="false">
+                                                <div class="text-center">
+                                                    <h6 class="title fw-normal mb-0">xTAO Migrator</h6>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link nav-link-alt rounded" id="your-app-tab" data-bs-toggle="pill" href="#your-app" role="tab" aria-controls="your-app" aria-selected="false">
+                                                <div class="text-center">
+                                                    <h6 class="title fw-normal mb-0">Your App</h6>
+                                                </div>
+                                            </a>
+                                        </li>
+ 
+                                    </ul>
+                                </div>
+                             
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="tab-content" id="pills-tabContent">
+    
+                    
+                                        <div class="tab-pane fade show active" id="analytics" role="tabpanel" aria-labelledby="analytics-tab">
+                                            <img src="images/illustrator/stats.PNG" alt="" width="100%" height="600px" style="border-radius: 10px;">               
+                                         
+                                         </div>
+                                                             
+                                        <div class="tab-pane fade" id="pills-npm" role="tabpanel" aria-labelledby="pills-npm-tab">
+                                            <img src="images/illustrator/farm.PNG" alt="" width="100%" height="600px" style="border-radius: 10px;">                    
+
+                                         </div>
+                                        <div class="tab-pane fade" id="pills-spm" role="tabpanel" aria-labelledby="pills-spm-tab">
+                                            <img src="images/illustrator/migration.PNG" alt="" width="100%" height="600px" style="border-radius: 10px;">                    
+                                        </div>
+            
+                                        <div class="tab-pane fade" id="your-app" role="tabpanel" aria-labelledby="your-app-tab">
+                                            <p class="text-muted fw-bold mb-0">Are you a dAPp developer looking to build your next great idea? Incorporating xTAO reflective mechanisms in your dApp can make you eligible for receiving a xTAO grant. <br/><br/>Get in touch on Telegram.</p>                       
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <br/><br/>
+        </section>
+
+        <section class="section" id="liquidity">
+            <div class="container">
+                <div class="row mt-lg-4 align-items-center">
+                    <div class="col-lg-5 col-md-12 text-center text-lg-start">
+                        <div class="section-title mb-4 mb-lg-0 pb-2 pb-lg-0">
+                            <h4 class="title mb-4">Incentivizing Liquidity<br/>Not Forcing It</h4>
+                            <p class="text-muted para-desc mx-auto mb-0">Instead of force adding liquidity after every transaction, xTAO incentivizes users to provide liquidity by allowing LP holders to stake their LP tokens and earn xTAO. <br/> <br/>The staking pool that provides rewards for xTAO LP stakers also receives part of the TX distributions, making it self-sustainable. Forever.</p>
+                            <a href="https://frictionfinance.gitbook.io/friction-finance/" target="_BLANK" target="_blank" class="btn btn-primary mt-4">Liquidity Incentives</span></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7 col-md-12 mt-4 mt-lg-0 pt-2 pt-lg-0">
+                        <div class="ms-lg-5">
+                            <div class="row align-items-center">
+                                <img src="images/illustrator/liquid.svg" alt="" height="550px">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+        </section>
+        <div class="position-relative">
+            <div class="shape overflow-hidden bg-normal" style="color: #1f2b46">
+                <svg viewBox="0 0 2880 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M720 125L2160 0H2880V250H0V125H720Z" fill="currentColor"></path>
+                </svg>
+            </div>
+        </div>
+
+        <section class="section bg-custom" id="faq">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="d-flex">
+                            <i data-feather="help-circle" class="fea icon-ex-md text-primary me-2 mt-1"></i>
+                            <div class="flex-1">
+                                <h5 class="mt-0">Did xTAO have a fair launch?</h5>
+                                <p class="answer text-muted mb-0">Absolutely. There was no pre-sale, no private investors, and no ICO. 98% of tokens at launch were either locked or burned with 2% used to supply initial AMM distribution. <a href="token.html">View xTAO distribution</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <div class="d-flex">
+                            <i data-feather="help-circle" class="fea icon-ex-md text-primary me-2 mt-1"></i>
+                            <div class="flex-1">
+                                <h5 class="mt-0"> How do I claim xTAO earned by holding?</h5>
+                                <p class="answer text-muted mb-0">After every transaction, xTAO TX distributions are automatically sent to all holder wallets automatically and instantly. You don't need to claim or do anything.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-12 mt-4 pt-2">
+                        <div class="d-flex">
+                            <i data-feather="help-circle" class="fea icon-ex-md text-primary me-2 mt-1"></i>
+                            <div class="flex-1">
+                                <h5 class="mt-0">What is the max total supply?</h5>
+                                <p class="answer text-muted mb-0">The total max supply of xTAO is 25m. There are no mint functionalities in any of the code so this number can never be higher.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-12 mt-4 pt-2">
+                        <div class="d-flex">
+                            <i data-feather="help-circle" class="fea icon-ex-md text-primary me-2 mt-1"></i>
+                            <div class="flex-1">
+                                <h5 class="mt-0">Where can I see price charts and stats?</h5>
+                                <p class="answer text-muted mb-0">You can view charts, stats, and analytics <a href="https://dashboard.friction.finance">here</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+<hr/>
+                <div class="row my-md-5 my-4 pt-2 justify-content-center">
+                    <div class="col-12 text-center">
+                        <div class="section-title">
+                            <h4 class="title">Join our Socials!</h4>
+                            <img src="images/illustrator/socials.svg" alt="" width="250px">
+                            <p class="text-muted para-desc mx-auto">Join our public, community ran telegram for news, announcements, and updates!</p>
+                            <a href="https://t.me/frictionfinancecommunity" target="_BLANK" class="btn btn-primary mt-4"><i data-feather="message-circle"></i> Community Telegram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer footer-bar">
+            <div class="container text-center">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="text-sm-start">
+                            <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Friction.Finance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <a href="#" onclick="topFunction()" id="back-to-top" class="btn btn-icon btn-primary back-to-top"><i data-feather="arrow-up" class="icons"></i></a>
+        
+        <script>
+
+let price = document.getElementById("price"); 
+let mCap = document.getElementById("mCap"); 
+async function getMarketCap(circulating) {
+fetch('https://api.friction.finance/nft/price').then(function(response) {
+  response.json().then(function(text) {
+    let raw = text.buyAmount / text.sellAmount;
+    price.innerText = raw.toFixed(3);
+    mCap.innerText = (raw * circulating).toLocaleString(undefined, {maximumFractionDigits: 0});
+  });
+});
+}
+
+let circulating = document.getElementById("circulating");           
+fetch('https://api.friction.finance/nft/circulating-supply').then(function(response) {
+  response.text().then(function(text) {
+    circulating.innerText = Number(text).toLocaleString(undefined, {maximumFractionDigits: 0});
+    getMarketCap(Number(text))
+  });
+});
+
+let fees = document.getElementById("fees");           
+fetch('https://api.friction.finance/nft/fees').then(function(response) {
+  response.text().then(function(text) {
+    let raw = Number(text) / Math.pow(10, 9);
+    fees.innerText = raw.toLocaleString(undefined, {maximumFractionDigits: 0});
+  });
+});
+
+        </script>
+        
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/feather.min.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
